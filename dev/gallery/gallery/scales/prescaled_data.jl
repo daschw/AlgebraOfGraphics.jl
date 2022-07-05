@@ -12,7 +12,7 @@ x = rand(100)
 y = rand(100)
 label = rand(["a", "b"], 100)
 df = (; x, y, label)
-plt = data(df) * mapping(:label => verbatim, (:x, :y) => Point) * visual(Annotations)
+plt = data(df) * mapping(:x, :y, text=:label => verbatim) * visual(Makie.Text)
 fg = draw(plt)
 
 # This file was generated using Literate.jl, https://github.com/fredrikekre/Literate.jl
